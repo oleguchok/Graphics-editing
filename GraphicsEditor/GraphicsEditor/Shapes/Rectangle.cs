@@ -12,17 +12,72 @@ namespace GraphicsEditor
     {
         protected int length;
         protected int width;
-
-        public Rectangle(int x, int y, int length, int width, Color brush) : base(x,y)
+        protected Point point1;
+        protected Point point2;
+        protected Brush brush;
+        protected Pen pen;
+        
+        public Rectangle(Point point1, Point point2, Color brushColor, Color penColor)
         {
-            this.length = length;
-            this.width = width;
-            this.brush = new SolidBrush(brush);
+            this.point1 = point1;
+            this.point2 = point2;
+            this.brush = new SolidBrush(brushColor);
+            this.pen = new Pen(penColor);
+            this.length = Math.Abs(point1.X - point2.X);
+            this.width = Math.Abs(point1.Y - point2.Y);
         }
 
-        public override void Draw(Graphics graphObj)
+        /*public override void Draw(Graphics graphObj)
         {
             graphObj.FillRectangle(brush, point.X, point.Y, this.length, this.width);
+        }*/
+
+        public override Point Point1
+        {
+            get
+            {
+                return point1;
+            }
+            set
+            {
+                point1 = value;
+            }
+        }
+
+        public override Point Point2
+        {
+            get
+            {
+                return point2;
+            }
+            set
+            {
+                point2 = value;
+            }
+        }
+
+        public override Brush Brush
+        {
+            get
+            {
+                return brush;
+            }
+            set
+            {
+                brush = value;
+            }
+        }
+
+        public override Pen Pen
+        {
+            get
+            {
+                return pen;
+            }
+            set
+            {
+                pen = value;
+            }
         }
     }
 }

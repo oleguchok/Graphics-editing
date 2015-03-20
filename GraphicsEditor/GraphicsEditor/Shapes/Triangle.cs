@@ -9,19 +9,79 @@ namespace GraphicsEditor
 {
     class Triangle : Shape
     {
-        protected Point secondPoint;
-        protected Point thirdPoint;
+        private Point point1;
+        private Point point2;
+        private Point point3;
+        private Brush brush;
+        private Pen pen;
+        
 
-        public Triangle(int x, int y, int x1, int y1, int x2, int y2, Color brush) : base(x,y)
+        public Triangle(Point point1, Point point2, Point point3, Color brushColor, Color penColor)
         {
-            secondPoint = new Point(x1, y1);
-            thirdPoint = new Point(x2, y2);
-            this.brush = new SolidBrush(brush);
+            this.point1 = point1;
+            this.point2 = point2;
+            this.point3 = point3;
+            this.brush = new SolidBrush(brushColor);
+            this.pen = new Pen(penColor);
         }
 
-        public override void Draw(Graphics graphObj)
+       /* public override void Draw(Graphics graphObj)
         {
             graphObj.FillPolygon(brush, new Point[] { point, secondPoint, thirdPoint });
+        }*/
+
+        public override Point Point1
+        {
+            get
+            {
+                return point1;
+            }
+            set
+            {
+                point1 = value;
+            }
+        }
+
+        public override Point Point2
+        {
+            get
+            {
+                return point2;
+            }
+            set
+            {
+                point2 = value;
+            }
+        }
+
+        public Point Point3
+        {
+            get { return point3; }
+            set { point3 = value; }
+        }
+
+        public override Brush Brush
+        {
+            get
+            {
+                return brush;
+            }
+            set
+            {
+                brush = value;
+            }
+        }
+
+        public override Pen Pen
+        {
+            get
+            {
+                return pen;
+            }
+            set
+            {
+                pen = value;
+            }
         }
     }
 }

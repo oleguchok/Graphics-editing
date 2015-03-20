@@ -10,27 +10,27 @@ namespace GraphicsEditor
 {
     abstract class Shape
     {
-        protected Point point;
-        protected Brush brush;
-        protected Pen pen;
+        public abstract Point Point1 { get; set; }
+        public abstract Point Point2 { get; set; }
+        public virtual Brush Brush { get; set; }
+        public abstract Pen Pen { get; set; }
 
-        public Shape(int x, int y)
+        /*public Shape(Point point1, Point point2, Color brushColor, Color penColor)
         {
-            this.point = new Point(x, y);
+            this.Point1 = point1;
+            this.Point2 = point2;
+            Brush = new SolidBrush(brushColor);
+            Pen = new Pen(penColor);
         }
 
-        public abstract void Draw(Graphics graphObj);
-
-        /*private virtual bool CorrectInput()
+        public Shape(Point point1, Point point2, Color penColor)
         {
-            if (point.X < 0 || point.Y < 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }*/
+            this.Point1 = point1;
+            this.Point2 = point2;
+            this.Pen = new Pen(penColor);
+        }
+        */
+       // public abstract void Draw(Graphics graphObj);
+
     }
 }

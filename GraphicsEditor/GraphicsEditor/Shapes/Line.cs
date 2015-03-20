@@ -9,17 +9,56 @@ namespace GraphicsEditor
 {
     class Line : Shape
     {
-        protected Point secondPoint;
-        public Line(int x, int y, int x1, int y1, Color pen) : base(x,y)
+        protected Point point1;
+        protected Point point2;
+        protected Pen pen;
+        
+        public Line(Point point1, Point point2, Color penColor)
         {
-            point = new Point(x, y);
-            secondPoint = new Point(x1, y1);
-            this.pen = new Pen(pen);
+            this.point1 = point1;
+            this.point2 = point2;
+            this.pen = new Pen(penColor);
         }
 
-        public override void Draw(Graphics graphObj)
+        /*public override void Draw(Graphics graphObj)
         {
             graphObj.DrawLine(pen, point, secondPoint);
+        }*/
+
+        public override Point Point1
+        {
+            get
+            {
+                return point1;
+            }
+            set
+            {
+                point1 = value;
+            }
+        }
+
+        public override Point Point2
+        {
+            get
+            {
+                return point2;
+            }
+            set
+            {
+                point2 = value;
+            }
+        }
+
+        public override Pen Pen
+        {
+            get
+            {
+                return pen;
+            }
+            set
+            {
+                pen = value;
+            }
         }
     }
 }

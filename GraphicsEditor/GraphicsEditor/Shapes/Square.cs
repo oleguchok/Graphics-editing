@@ -10,10 +10,9 @@ namespace GraphicsEditor
 {
     class Square : Rectangle
     {
-        public Square(int x, int y, int length, Color myBrush) : base(x,y,length,length,myBrush)
+        public Square(Point point1, Point point2, Color brushColor, Color penColor) : base(point1,point2,brushColor,penColor)
         {
-            point = new Point(x, y);
-            brush = new SolidBrush(myBrush);
+            this.width = Math.Abs(point1.X - point2.X);
         }
     }
 }

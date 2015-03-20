@@ -9,10 +9,9 @@ namespace GraphicsEditor
 {
     class Circle : Ellipse
     {
-        public Circle(int x, int y, int length, Color brush) : base (x, y, length, length, brush)
+        public Circle(Point point1, Point point2, Color brushColor, Color penColor) : base (point1, point2, brushColor, penColor)
         {
-            point = new Point(x, y);
-            this.brush = new SolidBrush(brush);
+            this.width = Math.Abs(point1.X - point2.X);
         }
     }
 }
