@@ -42,6 +42,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panelDraw = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@
             this.toolStripButtonLine.Name = "toolStripButtonLine";
             this.toolStripButtonLine.Size = new System.Drawing.Size(49, 22);
             this.toolStripButtonLine.Text = "Line";
+            this.toolStripButtonLine.Click += new System.EventHandler(this.toolStripButtonLine_Click);
             // 
             // toolStripSeparator1
             // 
@@ -147,11 +149,21 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // panelDraw
+            // 
+            this.panelDraw.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelDraw.Location = new System.Drawing.Point(0, 28);
+            this.panelDraw.Name = "panelDraw";
+            this.panelDraw.Size = new System.Drawing.Size(708, 403);
+            this.panelDraw.TabIndex = 1;
+            this.panelDraw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDraw_MouseDown);
+            // 
             // FormGraphicsEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 456);
+            this.ClientSize = new System.Drawing.Size(708, 432);
+            this.Controls.Add(this.panelDraw);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FormGraphicsEditor";
             this.Text = "Graphics Editor";
@@ -178,6 +190,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Panel panelDraw;
     }
 }
 
