@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GraphicsEditor.Creators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,22 @@ namespace GraphicsEditor
 {
     public partial class FormGraphicsEditor : Form
     {
-        bool isDrawing = false;
         Graphics g;
         Point[] arrayPoints = new Point[3];
-        Shape currentShape;
+        DrawCreator currentCreator;
         int clicksNumber, currentClicks = 0;
-
+        List<IDrawShape> drawingClasses = new List<IDrawShape>();
+        
         public FormGraphicsEditor()
         {
             InitializeComponent();
+        }
+
+        private void DrawOnPanel(List<IDrawShape> list)
+        {
+            g = panelDraw.CreateGraphics();
+            foreach (IDrawShape dr in list)
+                dr.Draw(g);
         }
 
         private void FormGraphicsEditor_Paint(object sender, PaintEventArgs e)
@@ -53,16 +61,17 @@ namespace GraphicsEditor
                     arrayPoints[2] = new Point(e.X, e.Y);
                 currentClicks++;
             }
-            else
+            if (currentClicks == clicksNumber)
             {
-                //DrawShape(Shape, Point[])
-                currentClicks++;
+                drawingClasses.Add(currentCreator.FactoryMethod(arrayPoints));
+                this.DrawOnPanel(drawingClasses);
+                currentClicks = 0;
             }
         }
 
         private void toolStripButtonLine_Click(object sender, EventArgs e)
         {
-            currentShape = new Line();
+            currentCreator = new LineDrawCreator();
             clicksNumber = 2;
             currentClicks = 0;
         }

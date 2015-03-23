@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawShape.cs" />
+    <Compile Include="Creators\DrawCreator.cs" />
+    <Compile Include="Creators\LineDrawCreator.cs" />
+    <Compile Include="DrawShapes\DrawLine.cs" />
+    <Compile Include="DrawShapes\IDrawShape.cs" />
     <Compile Include="FormGraphicsEditor.cs">
       <SubType>Form</SubType>
     </Compile>

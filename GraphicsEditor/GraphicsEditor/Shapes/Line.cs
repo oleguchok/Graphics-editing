@@ -20,10 +20,7 @@ namespace GraphicsEditor
             this.pen = new Pen(penColor);
         }
 
-        /*public override void Draw(Graphics graphObj)
-        {
-            graphObj.DrawLine(pen, point, secondPoint);
-        }*/
+        public Line() { }
 
         public override Point Point1
         {
