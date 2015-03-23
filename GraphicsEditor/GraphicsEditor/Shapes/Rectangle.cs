@@ -27,11 +27,6 @@ namespace GraphicsEditor
             this.width = Math.Abs(point1.Y - point2.Y);
         }
 
-        /*public override void Draw(Graphics graphObj)
-        {
-            graphObj.FillRectangle(brush, point.X, point.Y, this.length, this.width);
-        }*/
-
         public override Point Point1
         {
             get
@@ -78,6 +73,18 @@ namespace GraphicsEditor
             {
                 pen = value;
             }
+        }
+
+        public int Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+
+        public int Width
+        {
+            get { return width; }
+            set { width = value; }
         }
     }
 }

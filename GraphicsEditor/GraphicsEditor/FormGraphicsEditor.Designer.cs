@@ -41,6 +41,7 @@
             this.toolStripButtonTriangle = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.panelDraw = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
@@ -60,6 +61,7 @@
             this.toolStripButtonTriangle,
             this.toolStripSeparator4,
             this.toolStripButtonDelete,
+            this.toolStripButtonClear,
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -88,6 +90,7 @@
             this.toolStripButtonRectangle.Name = "toolStripButtonRectangle";
             this.toolStripButtonRectangle.Size = new System.Drawing.Size(79, 22);
             this.toolStripButtonRectangle.Text = "Rectangle";
+            this.toolStripButtonRectangle.Click += new System.EventHandler(this.toolStripButtonRectangle_Click);
             // 
             // toolStripButtonSquare
             // 
@@ -96,6 +99,7 @@
             this.toolStripButtonSquare.Name = "toolStripButtonSquare";
             this.toolStripButtonSquare.Size = new System.Drawing.Size(63, 22);
             this.toolStripButtonSquare.Text = "Square";
+            this.toolStripButtonSquare.Click += new System.EventHandler(this.toolStripButtonSquare_Click);
             // 
             // toolStripSeparator2
             // 
@@ -109,6 +113,7 @@
             this.toolStripButtonEllipse.Name = "toolStripButtonEllipse";
             this.toolStripButtonEllipse.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonEllipse.Text = "Ellipse";
+            this.toolStripButtonEllipse.Click += new System.EventHandler(this.toolStripButtonEllipse_Click);
             // 
             // toolStripButtonCircle
             // 
@@ -117,6 +122,7 @@
             this.toolStripButtonCircle.Name = "toolStripButtonCircle";
             this.toolStripButtonCircle.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtonCircle.Text = "Circle";
+            this.toolStripButtonCircle.Click += new System.EventHandler(this.toolStripButtonCircle_Click);
             // 
             // toolStripSeparator3
             // 
@@ -130,6 +136,7 @@
             this.toolStripButtonTriangle.Name = "toolStripButtonTriangle";
             this.toolStripButtonTriangle.Size = new System.Drawing.Size(70, 22);
             this.toolStripButtonTriangle.Text = "Triangle";
+            this.toolStripButtonTriangle.Click += new System.EventHandler(this.toolStripButtonTriangle_Click);
             // 
             // toolStripSeparator4
             // 
@@ -143,6 +150,16 @@
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
             this.toolStripButtonDelete.Size = new System.Drawing.Size(84, 22);
             this.toolStripButtonDelete.Text = "Delete Last";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
+            // toolStripButtonClear
+            // 
+            this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
+            this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClear.Name = "toolStripButtonClear";
+            this.toolStripButtonClear.Size = new System.Drawing.Size(82, 22);
+            this.toolStripButtonClear.Text = "Clear Field";
+            this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
             // 
             // toolStripSeparator5
             // 
@@ -167,7 +184,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "FormGraphicsEditor";
             this.Text = "Graphics Editor";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormGraphicsEditor_Paint);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -189,8 +205,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonTriangle;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Panel panelDraw;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClear;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 

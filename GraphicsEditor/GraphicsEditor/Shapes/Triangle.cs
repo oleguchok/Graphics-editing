@@ -25,11 +25,6 @@ namespace GraphicsEditor
             this.pen = new Pen(penColor);
         }
 
-       /* public override void Draw(Graphics graphObj)
-        {
-            graphObj.FillPolygon(brush, new Point[] { point, secondPoint, thirdPoint });
-        }*/
-
         public override Point Point1
         {
             get

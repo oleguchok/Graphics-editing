@@ -44,9 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creators\CircleDrawCreator.cs" />
     <Compile Include="Creators\DrawCreator.cs" />
+    <Compile Include="Creators\EllipseDrawCreator.cs" />
     <Compile Include="Creators\LineDrawCreator.cs" />
+    <Compile Include="Creators\RectangleDrawCreator.cs" />
+    <Compile Include="Creators\SquareDrawCreator.cs" />
+    <Compile Include="Creators\TriangleDrawCreator.cs" />
+    <Compile Include="DrawShapes\DrawEllipse.cs" />
     <Compile Include="DrawShapes\DrawLine.cs" />
+    <Compile Include="DrawShapes\DrawRectangle.cs" />
+    <Compile Include="DrawShapes\DrawTriangle.cs" />
     <Compile Include="DrawShapes\IDrawShape.cs" />
     <Compile Include="FormGraphicsEditor.cs">
       <SubType>Form</SubType>
